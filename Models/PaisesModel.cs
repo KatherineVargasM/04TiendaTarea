@@ -42,5 +42,66 @@ namespace _04TiendaTarea.Models
             conexionBDD.CerrarConexion();
             return listaPaises;
         }
+
+        public string insertar(PaisesModel  pais)
+        {
+            try
+            {
+                cmd.Connection = conexionBDD.AbrirConexion();
+                cmd.CommandText = "INSERT INTO Paises (Detalle) VALUES (@Detalle)";
+                cmd.Parameters.AddWithValue("@Detalle", pais.Detalle);
+                cmd.ExecuteNonQuery();
+                cmd.Parameters.Clear();
+                return "ok";
+            }
+            catch (Exception e)
+            {
+                return e.Message;
+            }
+            finally
+            {
+                conexionBDD.CerrarConexion();
+            }
+        }
+
+        public string editar(PaisesModel pais)
+        {
+            try
+            {
+                cmd.Connection = conexionBDD.AbrirConexion();
+                cmd.CommandText = "UPDATE Paises SET Detalle = '" + pais.Detalle + "' WHERE IdPais = " + pais.IdPais;
+                cmd.ExecuteNonQuery();
+                return "ok";
+            }
+            catch (Exception e)
+            {
+                return e.Message;
+            }
+            finally
+            {
+                conexionBDD.CerrarConexion();
+            }
+        }
+
+
+        public string eliminar(PaisesModel pais)
+        {
+            try
+            {
+                cmd.Connection = conexionBDD.AbrirConexion();
+                cmd.CommandText = "delete from paises where IdPais =" + pais.IdPais;
+                cmd.ExecuteNonQuery();
+                return "ok";
+            }
+            catch (Exception e)
+            {
+
+                return e.Message;
+            }
+            finally
+            {
+                conexionBDD.CerrarConexion();
+            }
+        }
     }
 }

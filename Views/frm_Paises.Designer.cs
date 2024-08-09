@@ -46,6 +46,7 @@
             this.btn_Grabar.TabIndex = 0;
             this.btn_Grabar.Text = "Grabar";
             this.btn_Grabar.UseVisualStyleBackColor = true;
+            this.btn_Grabar.Click += new System.EventHandler(this.btn_Grabar_Click);
             // 
             // btn_modificar
             // 
@@ -65,6 +66,7 @@
             this.btn_Eliminar.TabIndex = 2;
             this.btn_Eliminar.Text = "Eliminar";
             this.btn_Eliminar.UseVisualStyleBackColor = true;
+            this.btn_Eliminar.Click += new System.EventHandler(this.btn_Eliminar_Click);
             // 
             // btn_Cancelar
             // 
@@ -74,6 +76,7 @@
             this.btn_Cancelar.TabIndex = 3;
             this.btn_Cancelar.Text = "Cancelar";
             this.btn_Cancelar.UseVisualStyleBackColor = true;
+            this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
             // 
             // lst_Paises
             // 
